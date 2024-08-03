@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Anniversary</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            background-color: #ffccff; /* Example background color */
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            color: #ff69b4; /* Example pink color */
+            font-size: 3em;
+        }
+        .hidden {
+            display: none;
+        }
+        #message img, #flower img {
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        button {
+            background-color: #ff69b4; /* Pink color */
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1em;
+            margin: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #ff85c2; /* Slightly lighter pink */
+        }
+        #noButton {
+            position: relative;
+        }
+        .gallery img {
+            width: 100px;
+            margin: 5px;
+            border-radius: 10px;
+            transition: transform 0.2s;
+        }
+        .gallery img:hover {
+            transform: scale(1.1);
+        }
+        #flower {
+            animation: bloom 2s forwards;
+            opacity: 0;
+        }
+        @keyframes bloom {
+            0% { opacity: 0; transform: scale(0.5); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+        p {
+            color: #db3aab; /* Bright white color */
+            font-family: 'PT Serif', serif; /* PT Serif font */
+            font-size: 36px; /* Increased font size */
+        }
+    </style>
+</head>
+<body>
+    <h1>Happy Anniversary!୧⍤⃝💐</h1>
+    <div id="message">
+        <img src="https://media.tenor.com/Rymj4MuTQIEAAAAi/peach-cat.gif" alt="Cute GIF" style="max-width: 400px;">
+        <br>
+        
+        <button onclick="showLoveQuestion()">Click Here</button>
+    </div>
+
+    <div id="loveQuestion" class="hidden">
+        <img src="https://i.pinimg.com/originals/23/f2/44/23f244a08942d16bcc1eafef5a7ff20b.gif" alt="Cute GIF" style="max-width: 400px;">
+        <h2>DO YOU LOVE ME?</h2>
+        <button onclick="showPhotos()">Yes</button>
+        <button id="noButton" onclick="avoidClick()">No</button>
+    </div>
+
+    <div id="photos" class="hidden">
+        <div>
+            <img src="https://i.imgur.com/gZ1PXLD.jpg" alt="Photo 1" style="width:200px"> <!-- Placeholder for testing -->
+            <p>Remember our first unplanned date? Hence proved destined to be together.</p>
+        </div>
+        <div>
+            <img src="https://i.imgur.com/lqzIB1Q.jpg" alt="Photo 2" style="width:200px"> <!-- Placeholder for testing -->
+            <p>I always want to stay with you, annoy you foreverrrr and take so many more selfiessssss.</p>
+        </div>
+        <div>
+            <img src="https://i.imgur.com/JIo2VzW.jpg" alt="Photo 1" style="width: 200px;"> <!-- Placeholder for testing -->
+            <p>You are my comfort person. I love spending time with you. I want the time to stop when it's us.</p>
+        </div>
+        <div>
+            <img src="https://i.imgur.com/lWUWLVZ.jpg" alt="Photo 1" style="width: 200px;"> <!-- Placeholder for testing -->
+            <p>Here's to our last date<33 miss you more than I imagined. Come back to me as soon as possible.</p>
+        </div>
+        <button onclick="showGallery()">Next</button>
+    </div>
+
+    <div id="gallery" class="hidden">
+        <h2>Gallery of memories˚˖𓍢ִ໋🌷͙֒✧˚.🎀༘⋆</h2>
+        <div class="gallery">
+            <img src="https://i.imgur.com/nlurdUx.jpg" alt="Gallery 1"> <!-- Placeholder for testing -->
+            <img src="https://i.imgur.com/VtcZOL0.jpg" alt="Gallery 2"> <!-- Placeholder for testing -->
+            <img src="https://i.imgur.com/rQiQBDu.jpg" alt="Gallery 3"> <!-- Placeholder for testing -->
+            <img src="https://i.imgur.com/UbBhoXn.jpg" alt="Gallery 4"> <!-- Placeholder for testing -->
+            <img src="https://i.imgur.com/Dky2Pzq.jpg" alt="Gallery 4"> <!-- Placeholder for testing -->
+            <img src="https://i.imgur.com/g06CXWm.jpg" alt="Gallery 4"> <!-- Placeholder for testing -->
+            <img src="https://i.imgur.com/MRRiiqH.jpg" alt="Gallery 4"> <!-- Placeholder for testing -->
+            <img src="https://i.imgur.com/nlurdUx.jpg" alt="Gallery 4"> <!-- Placeholder for testing -->
+        </div>
+        <button onclick="showFlower()">Finish</button>
+    </div>
+
+    <div id="flower" class="hidden">
+        <img src="https://i.pinimg.com/originals/09/e7/1f/09e71f7458a0b53edf7d884eb97b6fbc.gif" alt="Flower" style="width:100px"> <!-- Placeholder for testing -->
+        <button onclick="showCake()">Cut Cake</button>
+    </div>
+
+    <div id="cake" class="hidden">
+        <h2>I Love You!</h2>
+        <p>Stay with me forever
+            🍰♡ ༘*.ﾟ🧸🎀
+        </p>
+        <img src="https://i.pinimg.com/originals/01/7f/21/017f2166a69a815b809c095fb9749f91.gif" alt="Cute GIF" style="max-width: 400px;">
+
+    </div>
+
+    <script>
+        function showLoveQuestion() {
+            document.getElementById('message').classList.add('hidden');
+            document.getElementById('loveQuestion').classList.remove('hidden');
+        }
+
+        function avoidClick() {
+            const noButton = document.getElementById('noButton');
+            noButton.style.top = Math.random() * window.innerHeight + 'px';
+            noButton.style.left = Math.random() * window.innerWidth + 'px';
+        }
+
+        function showPhotos() {
+            document.getElementById('loveQuestion').classList.add('hidden');
+            document.getElementById('photos').classList.remove('hidden');
+        }
+
+        function showGallery() {
+            document.getElementById('photos').classList.add('hidden');
+            document.getElementById('gallery').classList.remove('hidden');
+        }
+
+        function showFlower() {
+            document.getElementById('gallery').classList.add('hidden');
+            document.getElementById('flower').classList.remove('hidden');
+        }
+
+        function showCake() {
+            document.getElementById('flower').classList.add('hidden');
+            document.getElementById('cake').classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>
